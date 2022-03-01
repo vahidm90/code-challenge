@@ -22,9 +22,15 @@ export class AppComponent implements OnDestroy {
   }
 
   onFetchButtonClick(): void {
+    this.reset();
     this._poetryService.getRandomPoems()
       .pipe(takeUntil(this._destroy$))
       .subscribe(poems => this.poems = poems);
+  }
+
+  private reset(): void {
+    this.poems = undefined;
+    this.selectedPoem = undefined;
   }
 
 }
