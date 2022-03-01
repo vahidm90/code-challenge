@@ -1,2 +1,19 @@
 <button (click)="onFetchButtonClick()">fetch poems</button>
-{{poems|json}}
+<div *ngIf="poems else pressButton" class="poems-box">
+  <ul *ngIf="poems.length else noItems" class="poems-list">
+    <li *ngFor="let poem of poems" class="poem-entry">
+      <h3 class="title">{{poem.title}}</h3>
+      <small class="author">{{poem.author}}</small>
+    </li>
+  </ul>
+  <ng-template #noItems>
+    <p class="no-poems">
+      that's weired! no poems to display!
+    </p>
+  </ng-template>
+</div>
+<ng-template #pressButton>
+  <p class="intro">
+    press the button to see some magic happen!
+  </p>
+</ng-template>
