@@ -11,6 +11,12 @@
       that's weired! no poems to display!
     </p>
   </ng-template>
+  <div *ngIf="poems.length" class="preview-box">
+    <app-poem-preview *ngIf="selectedPoem else noSelectedPoem" [poem]="selectedPoem"></app-poem-preview>
+    <ng-template #noSelectedPoem>
+      <p>Pick a poem from the list!</p>
+    </ng-template>
+  </div>
 </div>
 <ng-template #pressButton>
   <p class="intro">
