@@ -10,7 +10,8 @@ import { IPoemModel } from './interfaces/poem.model';
 })
 export class AppComponent implements OnDestroy {
 
-  poems!: IPoemModel[];
+  poems!: IPoemModel[] | undefined;
+  selectedPoem!: IPoemModel | undefined;
 
   private _destroy$ = new Subject<void>();
 
