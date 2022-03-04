@@ -52,6 +52,10 @@
   border-bottom: 1px grey solid;
 }
 
+.poems-box .poem-entry:hover, .poems-box .poem-entry.selected {
+  background-color: #fff;
+}
+
 .poems-box .poem-entry:last-of-type {
   border-bottom: none;
 }
