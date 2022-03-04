@@ -1,4 +1,14 @@
-<button (click)="onFetchButtonClick()">fetch poems</button>
+<button [disabled]="isLoading" (click)="onFetchButtonClick()">
+  <ng-container *ngTemplateOutlet="isLoading ? loading : buttonReady"></ng-container>
+  <ng-template #buttonReady>Fetch Poems</ng-template>
+  <ng-template #loading>
+    <span class="dots">
+      <span class="dot-1"></span>
+      <span class="dot-2"></span>
+      <span class="dot-3"></span>
+    </span>
+  </ng-template>
+</button>
 <div *ngIf="poems else pressButton" class="poems-box">
   <ul *ngIf="poems.length else noItems" class="poems-list">
     <li *ngFor="let poem of poems" (click)="selectedPoem = poem" class="poem-entry">
