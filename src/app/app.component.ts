@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { PoetryDbService } from './services/poetry-db.service';
-import { Subject, takeUntil } from 'rxjs';
+import { finalize, Subject, takeUntil } from 'rxjs';
 import { IPoemModel } from './interfaces/poem.model';
 
 @Component({
@@ -12,6 +12,7 @@ export class AppComponent implements OnDestroy {
 
   poems!: IPoemModel[] | undefined;
   selectedPoem!: IPoemModel | undefined;
+  isLoading!: boolean;
 
   private _destroy$ = new Subject<void>();
 
@@ -25,13 +26,14 @@ export class AppComponent implements OnDestroy {
   onFetchButtonClick(): void {
     this.reset();
     this._poetryService.getRandomPoems()
-      .pipe(takeUntil(this._destroy$))
+      .pipe(finalize(() => this.isLoading = false), takeUntil(this._destroy$))
       .subscribe(poems => this.poems = poems);
   }
 
   private reset(): void {
     this.poems = undefined;
     this.selectedPoem = undefined;
+    this.isLoading = true;
   }
 
 }
