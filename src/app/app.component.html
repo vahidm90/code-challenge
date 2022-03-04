@@ -11,7 +11,8 @@
 </button>
 <div *ngIf="poems else pressButton" class="poems-box">
   <ul *ngIf="poems.length else noItems" class="poems-list">
-    <li *ngFor="let poem of poems" (click)="selectedPoem = poem" class="poem-entry">
+    <li *ngFor="let poem of poems; let i = index" class="poem-entry" [class.selected]="i === selectedIndex"
+        (click)="selectPoem(i)">
       <h3 class="title">{{poem.title}}</h3>
       <small class="author">{{poem.author}}</small>
     </li>
