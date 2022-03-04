@@ -1,4 +1,4 @@
-<button [disabled]="isLoading" (click)="onFetchButtonClick()">
+<button class="fetch" [disabled]="isLoading" (click)="onFetchButtonClick()">
   <ng-container *ngTemplateOutlet="isLoading ? loading : buttonReady"></ng-container>
   <ng-template #buttonReady>Fetch Poems</ng-template>
   <ng-template #loading>

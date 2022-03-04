@@ -8,6 +8,27 @@
   box-sizing: border-box;
 }
 
+.fetch {
+  background-color: #fff;
+  outline: 0;
+  border: 1px solid #5eb75e;
+  padding: 8px;
+  border-radius: 4px;
+  width: 150px;
+  color: #5eb75e;
+  cursor: pointer;
+}
+
+.fetch:disabled {
+  cursor: default;
+  border: 1px solid #8db28d;
+  color: #8db28d;
+}
+
+.fetch:not(:disabled):hover {
+  background-color: #5eb75e;
+  color: #fff;
+}
 
 .dots span {
   display: inline-block;
