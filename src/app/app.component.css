@@ -1,0 +1,57 @@
+:host {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.dots span {
+  display: inline-block;
+  background: #a5247a;
+  width: 3px;
+  height: 3px;
+  margin: 0 2px;
+  padding: 0;
+  border-radius: 50%;
+  animation: dot-bob .8s ease-in infinite;
+}
+
+.dots .dot-2 {
+  animation-delay: .7s;
+}
+
+.dots .dot-3 {
+  animation-delay: 1.3s;
+}
+
+
+
+.poems-box {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  width: 100%;
+}
+
+.poems-box .poems-list {
+  width: 50%;
+  list-style-type: none;
+  overflow-y: auto;
+}
+
+.poems-box .preview-box {
+  width: 50%;
+  overflow: hidden;
+}
+
+.poems-box .poem-entry {
+  border-bottom: 1px grey solid;
+}
+
+.poems-box .poem-entry:last-of-type {
+  border-bottom: none;
+}
