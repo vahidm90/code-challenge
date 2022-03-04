@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@keyframes dot-bob {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  70% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+body {
+  margin: 0;
+}
