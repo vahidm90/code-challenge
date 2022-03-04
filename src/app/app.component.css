@@ -28,28 +28,36 @@
   animation-delay: 1.3s;
 }
 
-
-
 .poems-box {
   display: flex;
   flex-grow: 1;
   overflow: hidden;
   width: 100%;
+  border-top: 10px groove #f1f1f1;
+  border-bottom: 10px ridge;
+  padding: 10px 0;
+  border-radius: 4px;
+  margin-top: 10px;
 }
 
 .poems-box .poems-list {
   width: 50%;
   list-style-type: none;
   overflow-y: auto;
+  margin: 0;
 }
 
 .poems-box .preview-box {
   width: 50%;
   overflow: hidden;
+  padding: 0 20px;
 }
 
 .poems-box .poem-entry {
-  border-bottom: 1px grey solid;
+  border-bottom: 1px grey dotted;
+  padding: 10px 20px;
+  background-color: #e5e2e2;
+  cursor: pointer;
 }
 
 .poems-box .poem-entry:hover, .poems-box .poem-entry.selected {
