@@ -12,6 +12,7 @@ export class AppComponent implements OnDestroy {
 
   poems!: IPoemModel[] | undefined;
   selectedPoem!: IPoemModel | undefined;
+  selectedIndex!: number;
   isLoading!: boolean;
 
   private _destroy$ = new Subject<void>();
@@ -28,6 +29,11 @@ export class AppComponent implements OnDestroy {
     this._poetryService.getRandomPoems()
       .pipe(finalize(() => this.isLoading = false), takeUntil(this._destroy$))
       .subscribe(poems => this.poems = poems);
+  }
+
+  selectPoem(index: number) {
+    this.selectedPoem = (this.poems as IPoemModel[])[index];
+    this.selectedIndex = index;
   }
 
   private reset(): void {
