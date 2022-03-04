@@ -30,7 +30,7 @@
   </div>
 </div>
 <ng-template #pressButton>
-  <p class="intro">
+  <p *ngIf="!isLoading" class="intro">
     press the button to see some magic happen!
   </p>
 </ng-template>
