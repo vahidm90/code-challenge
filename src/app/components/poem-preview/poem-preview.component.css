@@ -7,3 +7,16 @@ article {
   height: 100%;
   overflow-y: auto;
 }
+
+article header small {
+  font-style: italic;
+}
+
+article header {
+  margin-bottom: 32px;
+}
+
+main .verse {
+  margin: 4px 0;
+  padding: 0 8px;
+}
