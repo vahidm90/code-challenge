@@ -32,7 +32,7 @@
 
 .dots span {
   display: inline-block;
-  background: #a5247a;
+  background: #5eb75e;
   width: 3px;
   height: 3px;
   margin: 0 2px;
@@ -85,6 +85,18 @@
   background-color: #fff;
 }
 
+.poems-box .poem-entry.selected {
+  color: #5eb75e;
+}
+
 .poems-box .poem-entry:last-of-type {
   border-bottom: none;
+}
+
+.poem-entry h3 {
+  margin: 0 0 8px 0;
+}
+
+.poem-entry .author {
+  font-style: italic;
 }
